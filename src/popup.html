@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>百应直播讲解循环器</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="header">
+        <h1>百应直播讲解循环器</h1>
+        <span id="stateBadge" class="badge">检测中</span>
+      </header>
+
+      <label class="field">
+        <span>点击间隔（秒）</span>
+        <input id="intervalSeconds" min="3" max="3600" step="1" type="number" />
+      </label>
+
+      <label class="field">
+        <span>商品序号（留空自动选择）</span>
+        <input id="productIndex" min="1" max="9999" placeholder="例如 2" step="1" type="number" />
+      </label>
+
+      <label class="field">
+        <span>取消后重讲等待（秒）</span>
+        <input
+          id="restartDelaySeconds"
+          min="1"
+          max="60"
+          step="1"
+          type="number"
+        />
+      </label>
+
+      <div class="actions">
+        <button id="startButton" class="primary" type="button">启动</button>
+        <button id="stopButton" type="button">暂停</button>
+        <button id="saveButton" type="button">保存</button>
+      </div>
+
+      <section class="status">
+        <div>
+          <span class="label">最近动作</span>
+          <p id="lastAction">未启动</p>
+        </div>
+        <div>
+          <span class="label">下次执行</span>
+          <p id="nextRun">-</p>
+        </div>
+        <div id="errorRow" class="error" hidden>
+          <span class="label">提示</span>
+          <p id="lastError"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>

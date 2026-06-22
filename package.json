@@ -1,0 +1,18 @@
+{
+  "name": "buyin-auto-explain-extension",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Chrome extension for looping Buyin live product explain actions.",
+  "type": "module",
+  "scripts": {
+    "check": "node --test test/automation-core.test.js && node --check src/automation-core.js && node --check src/content.js && node --check src/popup.js",
+    "test": "node --test test/automation-core.test.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "buyin",
+    "douyin",
+    "live-commerce"
+  ],
+  "license": "MIT"
+}

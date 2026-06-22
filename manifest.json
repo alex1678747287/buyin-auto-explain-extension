@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "百应直播讲解循环器",
+  "description": "在抖音电商百应直播商品页按可配置间隔自动点击讲解。运行前请确认当前直播操作允许自动化。",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "百应直播讲解循环器",
+    "default_popup": "src/popup.html"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://buyin.jinritemai.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://buyin.jinritemai.com/dashboard/live/control*"],
+      "js": ["src/automation-core.js", "src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
